@@ -1,0 +1,202 @@
+/* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ffb6c1 0%, #e6b3ff 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+}
+
+/* Sparkling overlay effect */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 2px, transparent 2px),
+              radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: -1;
+  animation: sparkle 10s linear infinite;
+}
+
+@keyframes sparkle {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 100px 100px, 80px 60px;
+  }
+}
+
+/* Section Styling */
+section {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s ease;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Gift Section */
+#giftBoxContainer video {
+  width: 140px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.gift-msg {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #e60073;
+  font-weight: bold;
+}
+
+/* Name Prompt */
+.name-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  max-width: 90%;
+  width: 400px;
+}
+
+.name-card h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 22px;
+}
+
+.name-card input {
+  padding: 12px 16px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 2px solid #999;
+  margin-bottom: 15px;
+  width: calc(100% - 130px);
+  display: inline-block;
+}
+
+.name-card button {
+  padding: 12px 20px;
+  background-color: #ff69b4;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  margin-left: 10px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.name-card button:hover {
+  background-color: #e0559e;
+}
+
+/* Story Box */
+.story-box {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  cursor: pointer;
+}
+
+#catGif {
+  width: 100px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+#wishText {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.msg-bubble {
+  background: #ffd6e6;
+  padding: 15px;
+  border-radius: 16px;
+  font-size: 18px;
+  color: #444;
+}
+
+/* Choice Section */
+.choice-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+}
+
+.choice-img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 15px;
+  object-fit: contain;
+}
+
+.choice-msg {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.choice-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-primary {
+  padding: 12px;
+  background: #5f27cd;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-secondary {
+  padding: 12px;
+  background: #ccc;
+  color: #333;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+

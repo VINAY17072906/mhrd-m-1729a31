@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="carousel.css" />
+</head>
+<body>
+
+  <!-- Gift Box Section -->
+  <section id="giftSection" class="center">
+    <div id="giftBoxContainer" onclick="showNamePrompt()"></div>
+    <p class="gift-msg">Open the gift box cutie 😘</p>
+  </section>
+
+  <!-- Name Input Section -->
+  <section id="namePrompt" class="center hidden">
+    <div class="name-card">
+      <h2>Enter your name, Beautiful😍!</h2>
+      <input id="nameInput" type="text" placeholder="Your Name" />
+      <button onclick="handleNameEnter()">Next</button>
+    </div>
+  </section>
+
+  <!-- Story Section -->
+  <section id="storySection" class="center hidden">
+    <div class="story-box" onclick="nextMessage()">
+      <img id="catGif" src="img/cat1.gif" alt="cat" />
+      <h2 id="wishText"></h2>
+      <div class="msg-bubble" id="msgBox">
+        <p id="msgText"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Choice Section -->
+  <section id="choiceBox" class="center hidden">
+    <div class="choice-card">
+      <img src="img/cute-cat.gif" class="choice-img" alt="cute cat gif" />
+      <p class="choice-msg">Neha, How about we celebrate🥳 your birthday in style?</p>
+      <div class="choice-buttons">
+        <button class="btn-primary" onclick="startCarousel()">Absolutely, let's celebrate! 🎉</button>
+        <button class="btn-secondary">Maybe another time</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final 3D Carousel Section -->
+  <section id="carouselSection" class="center hidden">
+    <div class="carousel-container">
+
+      <!-- ✅ Static center message (not rotating) -->
+      <div class="carousel-message">
+        Happy Birthday Minnu,<br>My Love ❤️
+      </div>
+
+      <!-- 🎠 Rotating 3D ring of images -->
+      <div id="carousel" class="carousel"></div>
+    </div>
+  </section>
+
+  <!-- 🎵 Background Music -->
+  <audio id="bgMusic" src="audio/happy-birthday.mp3" preload="auto" loop></audio>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

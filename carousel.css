@@ -1,0 +1,71 @@
+/* Perspective container */
+.carousel-container {
+  perspective: 1200px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: white;
+  overflow: hidden;
+}
+
+/* 3D rotating carousel */
+#carousel {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(-25deg);
+  animation: spin 25s linear infinite;
+}
+
+/* Carousel images */
+#carousel img {
+  width: 120px;                /* ✅ Smaller width */
+  height: 180px;
+  object-fit: cover;
+  position: absolute;
+  top: 40px;
+  left: 50%;                  /* ✅ Center horizontally */
+  transform-origin: center;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backface-visibility: hidden;
+
+  /* Reflection */
+  -webkit-box-reflect: below 8px linear-gradient(transparent, rgba(0, 0, 0, 0.15));
+}
+
+/* Center message */
+.carousel-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateX(25deg) translateZ(100px); /* <-- ADDED */
+  font-size: 28px;
+  font-weight: bold;
+  color: #00bfff;
+  text-align: center;
+  pointer-events: none;
+  z-index: 10;
+  white-space: pre-line;
+}
+
+
+#carousel img {
+  /* ... your existing styles ... */
+  backface-visibility: visible; /* ✅ Make the backface visible */
+}
+
+/* Rotation animation */
+@keyframes spin {
+  from {
+    transform: rotateX(-25deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(-25deg) rotateY(360deg);
+  }
+}
